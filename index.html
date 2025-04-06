@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão</title>
+</head>
+<body>
+    <header>
+        <h1>Gestão</h1>
+    </header>
+    <main>
+        <button type="button" id="btn-chamador">Abrir chamador</button>
+        <section id="adicionar">
+            <input type="text" name="paciente" id="paciente" placeholder="Nome do paciente">
+            <input type="button" id="salvar_paciente" value="Salvar">
+        </section>
+        <section id="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Local</th>
+                        <th>Chamar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

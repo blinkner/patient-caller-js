@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamador</title>
+</head>
+<body>
+    <header>
+        <h1>Chamador</h1>
+    </header>
+    <main id="chamadas">
+        <section id="principal">
+            <h3 id="nome-principal"></h3>
+            <p>Local: <span id="local-principal"></span></p>
+        </section>
+    </main>
+    <script>
+        const bc = new BroadcastChannel('canalChamador');
+        bc.onmessage = (e) => {
+            const info = JSON.parse(e.data);
+
+            document.getElementById('nome-principal').innerText = info.nome.toUpperCase();
+            document.getElementById('local-principal').innerText = info.local;
+        }
+    </script>
+</body>
+</html>
