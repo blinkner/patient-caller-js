@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
             const info = JSON.parse(e.data);
 
             document.getElementById('nome-principal').innerText = info.nome.toUpperCase();
-            document.getElementById('local-principal').innerText = info.local;
+            document.getElementById('local-principal').innerText = info.local.toUpperCase();
         }
     </script>
 </body>
