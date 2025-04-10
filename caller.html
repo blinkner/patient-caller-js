@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamador</title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,6 +20,32 @@
             <h3 id="nome-principal"></h3>
             <p>Local: <span id="local-principal"></span></p>
         </section>
+        <section id="outros">
+            <table>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
     <script>
         const bc = new BroadcastChannel('canalChamador');
@@ -22,6 +54,25 @@
 
             document.getElementById('nome-principal').innerText = info.nome.toUpperCase();
             document.getElementById('local-principal').innerText = info.local.toUpperCase();
+
+            const linhas = document.querySelectorAll('tr');
+
+            if (linhas[0].children[0].innerText != info.nome.toUpperCase()) {
+                for (let i = 4; i >= 0; i--) {
+                    if (i == 0) {
+                        linhas[i].children[0].innerText = info.nome.toUpperCase();
+                        linhas[i].children[1].innerText = info.local.toUpperCase();
+                        continue;
+                    }
+    
+                    linhas[i].children[0].innerText = linhas[i - 1].children[0].innerText;
+                    linhas[i].children[1].innerText = linhas[i - 1].children[1].innerText;
+                }
+            }
+
+        const leitura = new SpeechSynthesisUtterance();
+        leitura.text = info.nome + ' local ' + info.local;
+        window.speechSynthesis.speak(leitura);
         }
     </script>
 </body>
