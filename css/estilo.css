@@ -1,0 +1,43 @@
+body {
+    background-color: #eeeeee;
+}
+#chamada-principal {
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid black;
+    min-height: calc(3em + 1em + 2*15px);
+    border-radius: 10px;
+}
+#chamada-principal h3 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+#chamada-principal p {
+    font-size: 1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+#chamadas-anteriores table {
+    width: 100%;
+}
+#chamadas-anteriores {
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+}
+#chamadas-anteriores td {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    height: 1em;
+    text-transform: uppercase;
+}
+#chamadas-anteriores td:first-child {
+    width: 80%;
+}
+.outros td {
+    border: 1px solid black;
+    padding: 10px;
+}
