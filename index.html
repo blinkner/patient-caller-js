@@ -5,42 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão</title>
     <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <h2>Chamador de Pacientes</h2>
         <h1>Gestão</h1>
         <button type="button" id="btn-chamador">Abrir chamador</button>
     </header>
-    <main>
-        <section id="cadastro-pacientes">
-            <h2>Cadastro de pacientes</h2>
-            <input type="text" name="paciente" id="paciente" placeholder="Nome do paciente">
-            <input type="button" id="adicionar_paciente" value="Adicionar">
-        </section>
-        <section id="tabela-pacientes">
-            <h2>Tabela de pacientes</h2>
-            <table>
+    <main id="gestao-tabelas">
+        <section id="pacientes">
+            <table class="tabela-cadastro" id="tabela-pacientes">
                 <thead>
+                    <tr>
+                        <th colspan="3"><input type="text" name="paciente" id="paciente" placeholder="Nome do paciente"></th>
+                        <th><input type="button" id="adicionar_paciente" value="Adicionar"></th>
+                    </tr>
                     <tr>
                         <th>Nome</th>
                         <th>Local</th>
-                        <th>Chamar</th>
-                        <th>Excluir</th>
+                        <th colspan="2">Opções</th>
                     </tr>
                 </thead>
                 <tbody id="corpo-tabela-pacientes"></tbody>
             </table>
         </section>
 
-        <section id="cadastro-locais">
-            <h2>Cadastro de locais</h2>
-            <input type="text" name="local" id="local" placeholder="Local">
-            <input type="button" id="adicionar-local" value="Adicionar">
-        </section>
-        <section id="tabela-locais">
-            <h2>Tabela de locais</h2>
-            <table>
+        <section id="locais">
+            <table class="tabela-cadastro" id="tabela-locais">
                 <thead>
+                    <tr>
+                        <th><input type="text" name="local" id="local" placeholder="Local"></th>
+                        <th><input type="button" id="adicionar-local" value="Adicionar"></th>
+                    </tr>
                     <tr>
                         <th>Nome</th>
                         <th>Excluir</th>

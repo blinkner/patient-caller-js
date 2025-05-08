@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamador</title>
     <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <main id="chamadas">
@@ -44,16 +48,16 @@
         bc.onmessage = (e) => {
             const info = JSON.parse(e.data);
 
-            document.getElementById('nome-principal').innerText = info.nome.toUpperCase();
-            document.getElementById('local-principal').innerText = info.local.toUpperCase();
+            document.getElementById('nome-principal').innerText = info.nome;
+            document.getElementById('local-principal').innerText = info.local;
 
             const linhas = document.querySelectorAll('tr');
 
-            if (linhas[0].children[0].innerText != info.nome.toUpperCase()) {
+            if (linhas[0].children[0].innerText != info.nome) {
                 for (let i = 4; i >= 0; i--) {
                     if (i == 0) {
-                        linhas[i].children[0].innerText = info.nome.toUpperCase();
-                        linhas[i].children[1].innerText = info.local.toUpperCase();
+                        linhas[i].children[0].innerText = info.nome;
+                        linhas[i].children[1].innerText = info.local;
                         continue;
                     }
     

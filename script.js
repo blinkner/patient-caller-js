@@ -44,7 +44,9 @@ document.getElementById('adicionar_paciente').addEventListener('click', () => {
         btn_excluir.innerText = 'Excluir';
 
         btn_excluir.addEventListener('click', () => {
-            btn_excluir.parentElement.parentElement.parentElement.removeChild(btn_excluir.parentElement.parentElement);
+            if (confirm("Deseja realmente excluir esse paciente?")) {
+                btn_excluir.parentElement.parentElement.parentElement.removeChild(btn_excluir.parentElement.parentElement);
+            }
         });
         td_excluir.appendChild(btn_excluir);
 
@@ -76,7 +78,9 @@ document.getElementById('adicionar-local').addEventListener('click', () => {
         btn_excluir.innerText = 'Excluir';
 
         btn_excluir.addEventListener('click', () => {
-            btn_excluir.parentElement.parentElement.parentElement.removeChild(btn_excluir.parentElement.parentElement);
+            if (confirm("Deseja realmente excluir esse local?")) {
+                btn_excluir.parentElement.parentElement.parentElement.removeChild(btn_excluir.parentElement.parentElement);
+            }
         });
 
         td_excluir.appendChild(btn_excluir);

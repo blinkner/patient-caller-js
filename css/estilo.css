@@ -1,13 +1,83 @@
+* {
+    font-family: "Open Sans", sans-serif;
+}
 body {
-    background-color: #eeeeee;
+    background-color: #eee;
+}
+header, main {
+    margin: auto;
+    width: 80%;
+}
+header {
+    text-align: center;
+    margin: 50px auto 10px;
+}
+header :is(h1, h2) {
+    text-shadow: 1px 1px 2px #000;
+    margin: 0;
+    color: #2d815d;
+}
+h1 {
+    font-size: 56px;
+}
+h2 {
+    font-size: 30px;
+}
+#gestao-tabelas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#gestao-tabelas section {
+    flex: 0 1 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+}
+#gestao-tabelas section:first-child {
+    flex: 0 1 70%;
+}
+.tabela-cadastro {
+    width: 90%;
+}
+.tabela-cadastro :is(td,th) {
+    border: 2px solid #2d815d;
+    background-color: #fff;
+    padding: 10px;
+    height: 1em;
+    text-transform: uppercase;
+}
+#tabela-pacientes tr :is(th, td):first-child {
+    width: 50%;
+}
+#tabela-pacientes tr :is(th, td):nth-child(2) {
+    width: 30%;
+    max-width: 150px;
+    overflow-x: overlay;
+}
+input, button {
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 2px solid #2d815d;
+}
+input[type=button], button {
+    border: none;
+    background-color: #2d815d;
+    color: #eee;
+    font-weight: bold;
+}
+input[type=button]:hover, button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 20px #000;
 }
 #chamada-principal {
-    width: 80%;
-    margin: auto;
     padding: 15px;
-    border: 1px solid black;
     min-height: calc(3em + 1em + 2*15px);
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 20px #000;
+    margin: 30px auto;
 }
 #chamada-principal h3 {
     font-size: 3em;
@@ -20,24 +90,22 @@ body {
     margin: 0;
     text-transform: uppercase;
 }
-#chamadas-anteriores table {
-    width: 100%;
-}
 #chamadas-anteriores {
-    width: 80%;
-    margin: auto;
     padding: 15px;
 }
+#chamadas-anteriores table {
+    width: 100%;
+    border-radius: 10px;
+}
 #chamadas-anteriores td {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #2d815d;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
     padding: 10px;
     height: 1em;
     text-transform: uppercase;
 }
 #chamadas-anteriores td:first-child {
     width: 80%;
-}
-.outros td {
-    border: 1px solid black;
-    padding: 10px;
 }
